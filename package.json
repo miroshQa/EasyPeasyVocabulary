@@ -1,6 +1,7 @@
 {
   "name": "vocabularythroughspeaking",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +11,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "freegptjs": "^0.0.2"
+    "gpt4js": "^1.7.8"
   }
 }

@@ -1,6 +1,5 @@
 
-
-async function exportToAnki(card) {
+export async function exportToAnki(card) {
   const ankiConnectUrl = "http://localhost:8765";
   let req = {
     action: "addNote",
@@ -26,10 +25,3 @@ async function exportToAnki(card) {
   let body = await res.json();
   console.log(body);
 }
-
-const fs = require('fs');
-
-const filePath = './prompt_res.html';
-const data = fs.readFileSync(filePath, 'utf8');
-const card = {Dictionary: data, word: "persuade"}
-exportToAnki(card);
