@@ -1,0 +1,42 @@
+{
+  "definitions": [
+    {
+      "definition": "To cause someone to do something through reasoning or argument.",
+      "wordTranslate": "Убедить",
+      "examples": [
+        "She tried to <strong>persuade</strong> him to join the team.",
+        "The lawyer worked hard to <strong>persuade</strong> the jury."
+      ],
+      "translations": [
+        "Она пыталась <strong>убедить</strong> его присоединиться к команде.",
+        "Адвокат усердно работал, чтобы <strong>убедить</strong> присяжных."
+      ]
+    },
+    {
+      "definition": "To convince someone to believe or do something.",
+      "wordTranslate": "Убедить",
+      "examples": [
+        "He was able to <strong>persuade</strong> her to change her mind.",
+        "They <strong>persuaded</strong> him to invest in the project."
+      ],
+      "translations": [
+        "Ему удалось <strong>убедить</strong> её изменить своё мнение.",
+        "Они <strong>убедили</strong> его инвестировать в проект."
+      ]
+    }
+  ],
+  "examples": [
+    "I need to <strong>persuade</strong> my parents to let me go on the trip.",
+    "Can you <strong>persuade</strong> him to help us?",
+    "The advertisement aims to <strong>persuade</strong> customers to buy the product.",
+    "She used facts to <strong>persuade</strong> the audience.",
+    "It took a long time to <strong>persuade</strong> them to accept the proposal."
+  ],
+  "translations": [
+    "Мне нужно <strong>убедить</strong> своих родителей позволить мне поехать в поездку.",
+    "Можешь <strong>убедить</strong> его помочь нам?",
+    "Реклама направлена на то, чтобы <strong>убедить</strong> клиентов купить продукт.",
+    "Она использовала факты, чтобы <strong>убедить</strong> аудиторию.",
+    "Это заняло много времени, чтобы <strong>убедить</strong> их принять предложение."
+  ]
+}

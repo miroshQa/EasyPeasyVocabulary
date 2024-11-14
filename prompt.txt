@@ -1,0 +1,49 @@
+Hi! My native language is Russian, and now I am learning English. Help me learn the English word "get". Please provide information about this word in the example JSON format specified below.
+
+{
+  "definitions": [
+    {
+      "definition": "First word definition in English",
+      "wordTranslate": "Translation of the word in Russian according to the definition",
+      "examples": [
+        "First definition example with the target word highlighted",
+        "Second definition example with the target word highlighted"
+      ],
+      "translations": [
+        "First example translation in Russian with the target word highlighted",
+        "Second example translation in Russian with the target word highlighted",
+      ]
+    },
+    {
+      "definition": "Second word definition in English",
+      "wordTranslate": "Translation of the word in Russian according to the definition",
+      "examples": [
+        "First definition example with the target word highlighted",
+        "Second definition example with the target word highlighted"
+      ],
+      "translations": [
+        "First example translation with the target word highlighted",
+        "Second example translation with the target word highlighted",
+      ]
+    }
+  ],
+  "examples": [
+    "First sentence example with target word highlighted"
+    "Second sentence example with target word highlighted",
+    "Third sentence example with target word highlighted",
+    "Fourth sentence example with target word highlighted",
+    "Fifth sentence example with target word highlighted",
+  ],
+  "translations": [
+    "First sentence example translation in Russian with target word highlighted"
+    "First sentence example translation in Russian with target word highlighted"
+    "First sentence example translation in Russian with target word highlighted"
+    "First sentence example translation in Russian with target word highlighted"
+    "First sentence example translation in Russian with target word highlighted"
+  ]
+}
+
+Some notices:
+1. Please provide me with JSON only! No additional comments are needed.
+2. You must highlight the word using the html tag <strong></strong>
+
