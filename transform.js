@@ -1,32 +1,63 @@
+
+
+function WriteToHtml(card, filePath) {
+  const htmlContent = `
+${card.Sentences}
+${card.Dictionary}`;
+  fs.writeFileSync(filePath, htmlContent, 'utf8');
+};
+
+async function exportToAnki(card) {
+  const ankiConnectUrl = "http://localhost:8765";
+  let req = {
+    action: "addNote",
+    version: 6,
+    params: {
+      note: {
+        deckName: "1. EngVocabulary::TranslateItToLearnNewWordWithContext",
+        modelName: "TranslateFromNativeToTarget",
+        fields: card,
+        options: {
+          allowDuplicate: false,
+          duplicateScope: this.ankiDeckName,
+          duplicateScopeOptions: {
+            deckName: "1. EngVocabulary::TranslateItToLearnNewWordWithContext",
+            checkChildren: false,
+            checkAllModels: false
+          }
+        },
+      }
+    }
+  }
+
+  let res = await fetch(ankiConnectUrl, { method: "POST", body: JSON.stringify(req) });
+  let body = await res.json();
+  console.log(body);
+}
+
 const zip = (a, b) => a.map((k, i) => [k, b[i]]);
 
 function createCard(word, data) {
-  let card = { Word: word, Examples: "", Translations: "", Dictionary: "" };
+  let card = { Word: word, Sentences: "", Dictionary: "" };
 
-  let examples = data.examples.map((item) => {
-    return `  <div class="example">${item}</div>`;
+  let sentences = zip(data.examples, data.translations).map(([ex, tr]) => {
+    return `
+  <div class="sentence">
+    <div class="example">${ex}</div>
+    <div class="translation">${tr}</div>
+  </div>`;
   }).join("\n");
 
-  card.Examples = `
-<div class="examples">
-${examples}
-</div>
-  `;
-
-  let translations = data.translations.map((item) => {
-    return `  <div class="translation">${item}</div>`;
-  }).join("\n");
-
-  card.Translations = `
-<div class="translations">
-${translations}
+  card.Sentences = `
+<div class="sentences">
+  ${sentences}
 </div>
   `;
 
   let definitions = data.definitions.map((item) => {
-    let defExamples = zip(item.examples, item.translations).map(([ex, trans]) => {
+    let defSentences = zip(item.examples, item.translations).map(([ex, trans]) => {
       return `
-      <div class="definition-example">
+      <div class="definition-sentence">
         <div class="example">${ex}</div>
         <div class="translation">${trans}</div>
       </div>`;
@@ -36,8 +67,8 @@ ${translations}
   <div class="definition-container">
     <div class="definition">${item.definition}</div>
     <div class="word-translate">${item.wordTranslate}</div>
-    <div class="definition-examples-container">
-      ${defExamples}
+    <div class="definition-sentences-container">
+      ${defSentences}
     </div>
   </div>`;
   }).join("\n");
@@ -58,19 +89,5 @@ const filePath = './prompt_res.json';
 const data = fs.readFileSync(filePath, 'utf8');
 const jsonData = JSON.parse(data);
 const card = createCard("persuade", jsonData);
-console.log(card);
-
-const serialized = JSON.stringify(card, null, 2);
-console.log(serialized);
-
-// Создание HTML-строки
-const htmlContent = `
-${card.Examples}
-${card.Translations}
-${card.Dictionary}
-`;
-// Запись HTML в файл
-const outputHtmlFilePath = './output_card.html'; // Укажите путь к выходному HTML файлу
-fs.writeFileSync(outputHtmlFilePath, htmlContent, 'utf8');
-
-console.log(`HTML записан в файл: ${outputHtmlFilePath}`);
+WriteToHtml(card, "./out.html")
+//exportToAnki(card);
