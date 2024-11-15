@@ -1,12 +1,18 @@
+#!/usr/bin/env node
+
 import { makePrompt } from "./prompt_gen.js"
 import { getPromptRes } from "./gpt.js"
 import { exportToAnki } from "./export.js"
 
 
 async function main() {
-  let word = "temper"
+  const variables = process.argv;
+  if (variables.length != 3) {
+    console.log("Error. Invalid arguments. Usage: epv <word>")
+    return;
+  }
+  let word = variables[2];
   const prompt = makePrompt(word, "Russian", "English");
-  console.log(prompt);
   const promptRes = await getPromptRes(prompt);
   console.log(promptRes);
   const card = {Dictionary: promptRes, word: word}
