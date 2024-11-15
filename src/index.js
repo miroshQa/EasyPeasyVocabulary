@@ -4,8 +4,9 @@ import { exportToAnki } from "./export.js"
 
 
 async function main() {
-  let word = "reap"
+  let word = "temper"
   const prompt = makePrompt(word, "Russian", "English");
+  console.log(prompt);
   const promptRes = await getPromptRes(prompt);
   console.log(promptRes);
   const card = {Dictionary: promptRes, word: word}
