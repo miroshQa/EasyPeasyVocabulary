@@ -12,5 +12,8 @@
   "description": "",
   "dependencies": {
     "gpt4js": "^1.7.8"
+  },
+  "bin": {
+    "epv": "./src/epv.js"
   }
 }

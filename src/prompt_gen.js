@@ -32,7 +32,7 @@ Please give me information about this word in the following HTML format:
 Important Notes:
 - Please provide the response in HTML format only, without any extra comments.
 - Highlight the word using the <strong></strong> HTML tag.
-- Include 2 the MOST popular words usages definitions what I can really find in everyday english usage, with 2 examples for each definition. It's okay if only one definition exists
+- Include 2 the MOST popular words usages definitions what I can really find in everyday english usage, with 2 examples for each definition. If only one definition exists then give me only one
 - The translation should only be the word's translation according to the definition, not the translation of the definition
 itself.
 `;

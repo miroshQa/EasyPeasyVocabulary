@@ -11,6 +11,7 @@ export async function getPromptRes(prompt) {
   console.log("Making request with prompt:");
   console.log(prompt);
   let text = await provider.chatCompletion(messages, options, (data) => {
+    console.log("Prompt result: ");
     console.log(data);
   });
   return text.replace(/```html/, "").replace(/```/, "");
